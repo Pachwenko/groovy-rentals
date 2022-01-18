@@ -11,9 +11,7 @@
     "test": "tests"
   },
   "scripts": {
-    "build": "npm-run-all build:ember",
-    "build:ember": "ember build --environment=production",
-    "build:compress": "find dist -type f -a \\( -name '*.html' -o -name '*.css' -o -name '*.js' -o -name '*.json' -o -name '*.xml' -o -name '*.svg' -o -name '*.txt' \\) -exec brotli --best --force {} \\+ -exec gzip --best --force -k {} \\+",
+    "build": "ember build --environment=production",
     "lint": "npm-run-all --aggregate-output --continue-on-error --parallel \"lint:!(fix)\"",
     "lint:fix": "npm-run-all --aggregate-output --continue-on-error --parallel lint:*:fix",
     "lint:hbs": "ember-template-lint .",
