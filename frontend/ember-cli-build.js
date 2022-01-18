@@ -10,9 +10,9 @@ module.exports = function (defaults) {
           require('tailwindcss')('./tailwind.config.js'),
           { module: require('postcss-import') },
           { module: require('autoprefixer') },
-        ]
-      }
-    }
+        ],
+      },
+    },
   });
 
   // Use `app.import` to add additional libraries to the generated
