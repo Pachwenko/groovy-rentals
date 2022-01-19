@@ -1,5 +1,5 @@
-import Application from 'rentals-frontend/app';
-import config from 'rentals-frontend/config/environment';
+import Application from 'super-rentals/app';
+import config from 'super-rentals/config/environment';
 import * as QUnit from 'qunit';
 import { setApplication } from '@ember/test-helpers';
 import { setup } from 'qunit-dom';

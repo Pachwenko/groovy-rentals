@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend:/code
+    command: npm run start
+    ports:
+      - 4200:4200
+    environment:
+      NODE_ENV: development
+  backend:
+    build:
+      context: ./backend
+    volumes:
+      - ./backend:/code
+    command: >
+      sh -c "poetry run python manage.py migrate;
+            poetry run python manage.py loaddata initial-data.json;
+            poetry run python manage.py runserver 0.0.0.0:8000"
+    ports:
+      - 8000:8000

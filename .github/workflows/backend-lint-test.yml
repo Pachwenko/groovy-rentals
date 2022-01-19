@@ -1,0 +1,42 @@
+name: Django CI
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - './backend'
+      - './.github'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - './backend'
+      - './.github'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+          architecture: 'x64'
+      - run: pip install flake8
+      - run: flake8 .
+
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: backend
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+      - run: pip install poetry
+      - run: poetry install
+      - run: poetry run pytest
