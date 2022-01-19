@@ -1,4 +1,4 @@
-name: Frontend Deploy
+name: Django build
 
 on:
   push:
@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend
+        working-directory: backend
 
     steps:
       - uses: actions/checkout@v2
