@@ -4,13 +4,13 @@ on:
   push:
     branches: [ main ]
     paths:
-      - './backend'
-      - './.github'
+      - 'backend/**'
+      - '.github/**'
   pull_request:
     branches: [ main ]
     paths:
-      - './backend'
-      - './.github'
+      - 'backend/**'
+      - '.github/**'
 
 jobs:
   lint:

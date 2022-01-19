@@ -4,17 +4,17 @@ on:
   push:
     branches: [ main ]
     paths:
-      - './frontend'
-      - './.github'
-      - './.nvmrc'
-      - './docker-compose.yml'
+      - 'frontend/**'
+      - '.github/**'
+      - '.nvmrc'
+      - 'docker-compose.yml'
   pull_request:
     branches: [ main ]
     paths:
-      - './frontend'
-      - './.github'
-      - './.nvmrc'
-      - './docker-compose.yml'
+      - 'frontend/**'
+      - '.github/**'
+      - '.nvmrc'
+      - 'docker-compose.yml'
 
 jobs:
   test:
