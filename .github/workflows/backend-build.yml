@@ -1,0 +1,39 @@
+name: Frontend Deploy
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+      - '.github/**'
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
+
+      - name: Setup poetry env
+        run: |
+          pip install poetry
+          poetry install
+
+      - name: Build Django stuff
+        run: |
+          poetry export -f requirements.txt --output requirements.txt
+          poetry run python manage.py collectstatic
+
+      - name: Upload to github branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./backend
+          publish_branch: dev-build-backend
