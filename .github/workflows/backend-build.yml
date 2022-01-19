@@ -28,7 +28,7 @@ jobs:
 
       - name: Build Django stuff
         run: |
-          poetry export -f requirements.txt --output requirements.txt
+          poetry export -f requirements.txt --output requirements.txt --without-hashes
 
       - name: Upload to github branch
         uses: peaceiris/actions-gh-pages@v3
