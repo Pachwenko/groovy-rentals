@@ -58,8 +58,8 @@ CORS_ALLOWED_ORIGINS = [
 ALLOWED_HOSTS = [
     'groovy-rentals-api.herokuapp.com',
     '.patrickmccartney.dev',
-    '.localhost', 
-    '127.0.0.1', 
+    '.localhost',
+    '127.0.0.1',
     '[::1]'
 ]
 
