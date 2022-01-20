@@ -41,7 +41,7 @@ jobs:
         run: sudo apt install postgresql-client -y
 
       - name: Install poetry
-        uses: snok/install-poetry@v1.0.0
+        uses: snok/install-poetry@5e4414407e59f94f2148bcb253917dfc22dee7d9
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true

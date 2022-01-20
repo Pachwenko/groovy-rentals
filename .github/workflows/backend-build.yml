@@ -22,7 +22,7 @@ jobs:
           python-version: '3.9'
 
       - name: Install poetry
-        uses: snok/install-poetry@v1.0.0
+        uses: snok/install-poetry@5e4414407e59f94f2148bcb253917dfc22dee7d9
         with:
           virtualenvs-create: true
           virtualenvs-in-project: true
@@ -42,7 +42,7 @@ jobs:
           poetry run python manage.py collectstatic
 
       - name: Upload to github branch
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@068dc23d9710f1ba62e86896f84735d869951305
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./backend
