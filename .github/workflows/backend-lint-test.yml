@@ -37,6 +37,30 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-      - run: pip install poetry
-      - run: poetry install
+      - name: Install postgres system packages
+        run: sudo apt install postgresql-client -y
+      
+      - name: Install python packages
+        run: |
+          pip install poetry
+          poetry install
       - run: poetry run pytest
+        env:
+          DATABASE_URL: postgres://groovy-rentals:password@localhost/postgres
+
+    services:
+      db:
+        image: postgres:latest
+        env:
+          POSTGRES_DB: groovy-rentals
+          POSTGRES_PASSWORD: password
+          POSTGRES_PORT: 5432
+          POSTGRES_USER: groovy-rentals
+        ports:
+          - 5432:5432
+        # set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
