@@ -139,3 +139,5 @@ cython_debug/
 
 zappa_settings.json
 .python-version
+
+staticfiles
