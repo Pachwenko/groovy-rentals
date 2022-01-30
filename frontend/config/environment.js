@@ -25,9 +25,15 @@ module.exports = function (environment) {
       host: 'https://groovy-rentals-api.herokuapp.com',
       namespace: 'api',
     },
+
+    // MAPBOX STUFF
+    // ensure this token has the STYLES:TILES scope
+    // ensure the access URL is configured in mapbox properly (e.x: patrickmccartney.dev to only allow requests from this domain)
+    MAPBOX_ACCESS_TOKEN: process.env.MAPBOX_ACCESS_TOKEN,
   };
 
   if (environment === 'development') {
+    console.log('in dev env');
     ENV.api.host = 'http://localhost:8000';
     ENV['ember-cli-mirage'] = {
       enabled: false,
@@ -40,6 +46,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'test') {
+    console.log('in test env');
     ENV.api.host = '/';
 
     // Testem prefers this...
@@ -56,9 +63,6 @@ module.exports = function (environment) {
   if (environment === 'production') {
     // here you can enable a production-specific feature
   }
-
-  ENV.MAPBOX_ACCESS_TOKEN =
-    'pk.eyJ1IjoicGFjaHdlbmtvIiwiYSI6ImNrc25razBjbzNmNWMyem5xb2x4dnk4dmYifQ.SxfIbHD7rRLiJ4X6pFiqAA';
 
   return ENV;
 };

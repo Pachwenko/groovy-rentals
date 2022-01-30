@@ -3,5 +3,5 @@ import ENV from 'groovy-rentals/config/environment';
 
 export default class ApplicationAdapter extends JSONAPIAdapter {
   namespace = 'api';
-  host = ENV.groovyRentalsDomain;
+  host = ENV.api.host;
 }
