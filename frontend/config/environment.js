@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'super-rentals',
+    modulePrefix: 'groovy-rentals',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -21,9 +21,14 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    api: {
+      host: 'https://groovy-rentals-api.herokuapp.com',
+      namespace: 'api',
+    },
   };
 
   if (environment === 'development') {
+    ENV.api.host = 'http://localhost:8000';
     ENV['ember-cli-mirage'] = {
       enabled: false,
     };
@@ -35,6 +40,8 @@ module.exports = function (environment) {
   }
 
   if (environment === 'test') {
+    ENV.api.host = '/';
+
     // Testem prefers this...
     ENV.locationType = 'none';
 
