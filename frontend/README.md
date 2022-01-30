@@ -54,9 +54,9 @@ This app is built using github actions, see the [frontend-deloy action](../.gith
 
 ### [Mapbox integration](https://tailwindcss.com/)
 
-Uses mapbox to display a mini map of where a rental is location using (Mapbox)[https://www.mapbox.com/].
+Uses mapbox to display a mini map of where a rental is location using [Mapbox](https://www.mapbox.com/).
 
-To see the mapbox tiles you will need to set up a mapbox API token and put it in the .env file (or expose the `MAPBOX_ACCESS_TOKEN` environment variable through other means). There is a fake one provided so you do not get an error running the application, but you will see whitespace where the tile is supposed to be since the API request fails. When configuring your Mapbox token the scope required is `STYLES:TILES`, but you should also configure the `url` to the domain you are using for security, for exaple: `patrickmccartney.dev`.
+To see the mapbox tiles you will need to set up a mapbox API token and put it in [the .env file](./.env) (or expose the `MAPBOX_ACCESS_TOKEN` environment variable through other means). There is a fake one provided so you do not get an error running the application, but you will see whitespace where the tile is supposed to be since the API request fails. When configuring your Mapbox token the scope required is `STYLES:TILES`, but you should also configure the `url` to the domain you are using for security, for exaple: `patrickmccartney.dev`.
 
 ### Further Reading / Useful Links
 
