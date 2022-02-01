@@ -53,17 +53,23 @@ DATABASES = {
 CORS_ALLOWED_ORIGINS = [
     "https://groovy-rentals-api.herokuapp.com",
     "https://groovy-rentals.patrickmccartney.dev",
-    "http://localhost:8000",
-    "http://localhost:4200",
 ]
 
 ALLOWED_HOSTS = [
     'groovy-rentals-api.herokuapp.com',
     '.patrickmccartney.dev',
-    '.localhost',
-    '127.0.0.1',
-    '[::1]'
 ]
+
+if DEBUG:
+    ALLOWED_HOSTS += [
+        '.localhost',
+        '127.0.0.1',
+        '[::1]',
+    ]
+    CORS_ALLOWED_ORIGINS += [
+        "http://localhost:8000",
+        "http://localhost:4200",
+    ]
 
 CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
 
