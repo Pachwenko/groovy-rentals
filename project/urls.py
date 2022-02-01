@@ -13,19 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-# don't do this, but do it for now
-from django.contrib.staticfiles.urls import staticfiles_urlpatterns
-
+from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import include, path
 from django.views.generic import TemplateView
 from rest_framework import routers
 from rest_framework.schemas import get_schema_view
 
 from api.views.rental import RentalViewSet
 
-
 api_doc_urls = [
+    path('openapi', get_schema_view(
+        title="Groovy Rentals API",
+        description="API for Super Rentals",
+        version="1.0.0"
+    ), name='openapi-schema'),
     path('swagger-ui/', TemplateView.as_view(
         template_name='swagger-ui.html',
         extra_context={'schema_url': 'openapi-schema'}
@@ -38,12 +40,7 @@ api_router.register(r'api/rentals', RentalViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
-    path('openapi', get_schema_view(
-        title="Ember Django Example API",
-        description="API for Super Rentals",
-        version="1.0.0"
-    ), name='openapi-schema'),
-] + api_doc_urls
+] 
 
-urlpatterns += staticfiles_urlpatterns()
+urlpatterns += api_doc_urls
 urlpatterns += api_router.urls
