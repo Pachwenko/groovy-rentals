@@ -33,7 +33,6 @@ module.exports = function (environment) {
   };
 
   if (environment === 'development') {
-    console.log('in dev env');
     ENV.api.host = 'http://localhost:8000';
     ENV['ember-cli-mirage'] = {
       enabled: false,
@@ -46,9 +45,6 @@ module.exports = function (environment) {
   }
 
   if (environment === 'test') {
-    console.log('in test env');
-    ENV.api.host = '/';
-
     // Testem prefers this...
     ENV.locationType = 'none';
 
