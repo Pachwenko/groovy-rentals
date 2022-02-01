@@ -3,14 +3,12 @@ name: Django CI
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'backend/**'
-      - '.github/**'
+    paths-ignore:
+      - 'frontend/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'backend/**'
-      - '.github/**'
+    paths-ignore:
+      - 'frontend/**'
 
 jobs:
   lint:

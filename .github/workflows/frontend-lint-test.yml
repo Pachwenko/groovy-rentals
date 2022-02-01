@@ -3,18 +3,12 @@ name: Ember.js CI
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'frontend/**'
-      - '.github/**'
-      - '.nvmrc'
-      - 'docker-compose.yml'
+    paths-ignore:
+      - 'backend/**'
   pull_request:
     branches: [ main ]
-    paths:
-      - 'frontend/**'
-      - '.github/**'
-      - '.nvmrc'
-      - 'docker-compose.yml'
+    paths-ignore:
+      - 'backend/**'
 
 jobs:
   test:
