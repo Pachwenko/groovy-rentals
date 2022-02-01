@@ -4,6 +4,6 @@ from api.serializers.rental import RentalSerializer
 from api.models.rental import Rental
 
 
-class RentalViewSet(viewsets.ModelViewSet):
+class RentalViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = RentalSerializer
     queryset = Rental.objects.prefetch_related('location').all()

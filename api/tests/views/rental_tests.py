@@ -89,3 +89,33 @@ def test_minimal_queries_with_many_relations(client, django_assert_num_queries):
     with django_assert_num_queries(2):
         response = client.get('/api/rentals/')
         assert 200 == response.status_code
+
+
+@pytest.mark.django_db()
+def test_post_doesnt_work(client):
+    location = LocationFactory()
+    post_data = {
+        'data': {
+            'type': 'Rental',
+            'attributes': {
+                'city': 'Salt lake City',
+                'owner': 'Could be you',
+                'title': 'Sweet Apartment downtown',
+                'description': 'A downtown apartment in the heart of Salt lake City.',
+                'category': 'Apartment',
+                'image': 'https://example.com',
+                'bedrooms': 2,
+            },
+            'relationships': {
+                'location': {
+                    'data': {
+                        'type': 'Location',
+                        'id': location.pk
+                    }
+                }
+            }
+        }
+    }
+
+    response = client.post('/api/rentals/', post_data, 'application/vnd.api+json')
+    assert 405 == response.status_code
