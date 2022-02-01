@@ -29,6 +29,7 @@ psycopg2-binary = "^2.9.3"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^3.9.2"
+pytest = "^6.2.5"
 pytest-django = "^4.4.0"
 factory-boy = "^3.2.0"
 
