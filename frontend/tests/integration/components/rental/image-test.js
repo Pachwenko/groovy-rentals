@@ -9,22 +9,22 @@ module('Integration | Component | rental/image', function (hooks) {
   test('it renders the given image', async function (assert) {
     await render(hbs`
       <Rental::Image
-        src="/assets/images/teaching-tomster.png"
-        alt="Teaching Tomster"
+        src="/assets/images/spooky-logo-lg-tall.png"
+        alt="Spooky Rentals Logo"
       />
     `);
     assert
       .dom('.image img')
       .exists()
-      .hasAttribute('src', '/assets/images/teaching-tomster.png')
-      .hasAttribute('alt', 'Teaching Tomster');
+      .hasAttribute('src', '/assets/images/spooky-logo-lg-tall.png')
+      .hasAttribute('alt', 'Spooky Rentals Logo');
   });
 
   test('clicking on the component toggles its size', async function (assert) {
     await render(hbs`
       <Rental::Image
-        src="/assets/images/teaching-tomster.png"
-        alt="Teaching Tomster"
+        src="/assets/images/spooky-logo-lg-tall.png"
+        alt="Spooky Rentals Logo"
       />
     `);
 
