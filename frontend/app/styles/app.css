@@ -451,8 +451,8 @@ p {
   position: relative;
 }
 
-.tomster {
-  background: url(../assets/images/teaching-tomster.png);
+.biglogo {
+  background: url(../assets/images/spooky-logo-lg-tall.png);
   background-size: contain;
   background-repeat: no-repeat;
   height: 200px;
