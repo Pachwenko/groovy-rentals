@@ -23,7 +23,7 @@ from api.views.rental import RentalViewSet
 
 api_doc_urls = [
     path('openapi', get_schema_view(
-        title="Groovy Rentals API",
+        title="Spooky Rentals API",
         description="API for Super Rentals",
         version="1.0.0"
     ), name='openapi-schema'),
