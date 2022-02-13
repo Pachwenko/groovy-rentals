@@ -1,4 +1,4 @@
-# Ember.js frontend for groovy-rentals
+# Ember.js frontend for spooky-rentals
 
 A hobby project made to hone emberjs skills. Connects to a django API by default, but miragejs can be enabled to run without a real API (this is used for testing purposes).
 

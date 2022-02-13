@@ -1,5 +1,5 @@
 import { createServer, discoverEmberDataModels } from 'ember-cli-mirage';
-import ENV from 'groovy-rentals/config/environment';
+import ENV from 'spooky-rentals/config/environment';
 
 export default function makeServer(config) {
   let finalConfig = {

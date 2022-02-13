@@ -1,4 +1,4 @@
-# groovy rentals
+# spooky rentals
 
 TODO
 

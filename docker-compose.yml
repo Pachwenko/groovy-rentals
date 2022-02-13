@@ -23,7 +23,7 @@ services:
       - 8000:8000
     environment:
       DEBUG: 1
-      DATABASE_URL: postgres://groovy-rentals:password@db/postgres
+      DATABASE_URL: postgres://spooky-rentals:password@db/postgres
       SECRET_KEY: "dont use me in production"
     depends_on:
       - db
@@ -33,6 +33,6 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - POSTGRES_DB=groovy-rentals
-      - POSTGRES_USER=groovy-rentals
+      - POSTGRES_DB=spooky-rentals
+      - POSTGRES_USER=spooky-rentals
       - POSTGRES_PASSWORD=password 

@@ -1,5 +1,5 @@
 import JSONAPIAdapter from '@ember-data/adapter/json-api';
-import ENV from 'groovy-rentals/config/environment';
+import ENV from 'spooky-rentals/config/environment';
 
 export default class ApplicationAdapter extends JSONAPIAdapter {
   namespace = 'api';

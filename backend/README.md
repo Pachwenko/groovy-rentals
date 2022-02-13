@@ -1,4 +1,4 @@
-# A Django API for groovy rentals
+# A Django API for spooky rentals
 
 ## Prerequisites
 
@@ -42,7 +42,7 @@ You will need the following things properly installed on your computer (unless u
 
 Make sure to modify the environment variables. For example, ensure DEBUG=0 or is removed (defaults to disabled) and provide a secure secret key. The provided [.env file](./.env) is purely for development use and not a production deployment.
 
-This application is currently deployed to [https://groovy-rentals-api.herokuapp.com](https://groovy-rentals-api.herokuapp.com) using [Heroku](https://www.heroku.com/). We are using a custom github build action to prepare the build because this repo is a monorepo and we get more control over the build environment. Check out the [backend-build action](../.github/workflows/backend-build.yml).
+This application is currently deployed to [https://spooky-rentals-api.herokuapp.com](https://spooky-rentals-api.herokuapp.com) using [Heroku](https://www.heroku.com/). We are using a custom github build action to prepare the build because this repo is a monorepo and we get more control over the build environment. Check out the [backend-build action](../.github/workflows/backend-build.yml).
 
 The API is using Postgres, but can be configured to use other databases by setting the `DATABASE_URL` environment variable (an example .env file is provided for example).
 

@@ -2,7 +2,7 @@
 
 module.exports = function (environment) {
   let ENV = {
-    modulePrefix: 'groovy-rentals',
+    modulePrefix: 'spooky-rentals',
     environment,
     rootURL: '/',
     locationType: 'auto',
@@ -22,7 +22,7 @@ module.exports = function (environment) {
       // when it is created
     },
     api: {
-      host: 'https://groovy-rentals-api.herokuapp.com',
+      host: 'https://spooky-rentals-api.herokuapp.com',
       namespace: 'api',
     },
 

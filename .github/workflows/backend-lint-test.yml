@@ -55,16 +55,16 @@ jobs:
 
       - run: poetry run pytest
         env:
-          DATABASE_URL: postgres://groovy-rentals:password@localhost/postgres
+          DATABASE_URL: postgres://spooky-rentals:password@localhost/postgres
 
     services:
       db:
         image: postgres:latest
         env:
-          POSTGRES_DB: groovy-rentals
+          POSTGRES_DB: spooky-rentals
           POSTGRES_PASSWORD: password
           POSTGRES_PORT: 5432
-          POSTGRES_USER: groovy-rentals
+          POSTGRES_USER: spooky-rentals
         ports:
           - 5432:5432
         # set health checks to wait until postgres has started

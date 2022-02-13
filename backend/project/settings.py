@@ -51,12 +51,12 @@ DATABASES = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "https://groovy-rentals-api.herokuapp.com",
-    "https://groovy-rentals.patrickmccartney.dev",
+    "https://spooky-rentals-api.herokuapp.com",
+    "https://spooky-rentals.patrickmccartney.dev",
 ]
 
 ALLOWED_HOSTS = [
-    'groovy-rentals-api.herokuapp.com',
+    'spooky-rentals-api.herokuapp.com',
     '.patrickmccartney.dev',
 ]
 
