@@ -9,7 +9,6 @@ export default class MapComponent extends Component {
     let coordinates = `${lng},${lat},${zoom}`;
     let dimensions = `${width}x${height}`;
     let accessToken = `access_token=${this.token}`;
-    myUndefinedFunction();
     return `${MAPBOX_API}/${coordinates}/${dimensions}@2x?${accessToken}`;
   }
 
