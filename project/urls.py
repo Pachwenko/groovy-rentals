@@ -33,7 +33,7 @@ api_doc_urls = [
     ), name='swagger-ui'),
 ]
 
-api_router = routers.SimpleRouter()
+api_router = routers.SimpleRouter(trailing_slash=False)
 api_router.register(r'api/rentals', RentalViewSet)
 
 urlpatterns = [

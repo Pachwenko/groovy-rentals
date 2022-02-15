@@ -21,7 +21,7 @@ def test_get_rentals_returns_single_rental(client):
     # we aren't using django's reverse utility for urls
     # this is because the frontent is relying on these urls not to change
     # if we used reverse we can easliy pass all our API tests but the frontend will break
-    response = client.get(f'/api/rentals/{rental1.pk}/')
+    response = client.get(f'/api/rentals/{rental1.pk}')
     # having the first assert for status code is helpful
     # because a 200 != 404 is much clearer than "KeyError" or other such error
     # can make a huge difference tracking down bugs due to a large refactor
@@ -43,7 +43,7 @@ def test_get_rentals_returns_all_rentals(client):
     location2 = LocationFactory()
     rental1 = RentalFactory(location=location1)
     rental2 = RentalFactory(location=location2)
-    response = client.get('/api/rentals/')
+    response = client.get('/api/rentals')
     assert 200 == response.status_code
     assert 2 == len(response.json()['data'])
 
@@ -69,7 +69,7 @@ def test_get_rentals_returns_all_rentals(client):
 @pytest.mark.django_db()
 def test_get_rentals_returns_locations_in_included(client):
     rental = RentalFactory()
-    response = client.get('/api/rentals/')
+    response = client.get('/api/rentals')
     assert 200 == response.status_code
     assert 1 == len(response.json()['included'])
 
@@ -87,7 +87,7 @@ def test_minimal_queries_with_many_relations(client, django_assert_num_queries):
     for i in range(10):
         RentalFactory()
     with django_assert_num_queries(2):
-        response = client.get('/api/rentals/')
+        response = client.get('/api/rentals')
         assert 200 == response.status_code
 
 
@@ -117,5 +117,5 @@ def test_post_doesnt_work(client):
         }
     }
 
-    response = client.post('/api/rentals/', post_data, 'application/vnd.api+json')
+    response = client.post('/api/rentals', post_data, 'application/vnd.api+json')
     assert 405 == response.status_code
