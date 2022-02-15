@@ -6,6 +6,7 @@ import ENV from 'spooky-rentals/config/environment';
 
 import * as Sentry from '@sentry/ember';
 
+console.log(ENV.SENTRY_DSN);
 Sentry.init({
   dsn: ENV.SENTRY_DSN,
   tracesSampleRate: 1.0,
