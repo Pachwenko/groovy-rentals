@@ -73,3 +73,4 @@ To see the mapbox tiles you will need to set up a mapbox API token and put it in
 - [Mapbox documentation](https://docs.mapbox.com/)
 - [Tailwindcss documentation](https://tailwindcss.com/docs/installation)
   - Setting up tailwind isn't super straightforward with ember and postcss, but this gist was helpful https://gist.github.com/Robert-96/4d85dcafe05d9e5e72d813ae7107cc47
+    - A more recent guide to setting this up here https://asasmith.com/tailwindcss-v3-emberjs-setup

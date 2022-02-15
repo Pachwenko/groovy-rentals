@@ -1,8 +1,8 @@
 'use strict';
 
 const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const isProduction = EmberApp.env() === 'production';
-
+const autoprefixer = require('autoprefixer');
+const postcssImport = require('postcss-import');
 const purgeCSS = {
   module: require('@fullhuman/postcss-purgecss'),
   options: {
@@ -16,6 +16,9 @@ const purgeCSS = {
     defaultExtractor: (content) => content.match(/[A-Za-z0-9-_:/.]+/g) || [],
   },
 };
+const tailwind = require('tailwindcss');
+
+const isProduction = EmberApp.env() === 'production';
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
@@ -23,10 +26,16 @@ module.exports = function (defaults) {
     postcssOptions: {
       compile: {
         enabled: true,
+        cacheInclude: [/.*\.(css|scss|hbs)$/, /.tailwind\/config\.js$/],
         plugins: [
-          { module: require('postcss-import') },
-          { module: require('autoprefixer') },
-          require('tailwindcss')('./tailwind.config.js'),
+          { module: postcssImport },
+          { module: autoprefixer },
+          {
+            module: tailwind,
+            options: {
+              config: './tailwind.config.js',
+            },
+          },
           ...(isProduction ? [purgeCSS] : []),
         ],
       },
