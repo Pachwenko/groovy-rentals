@@ -1,4 +1,4 @@
-name: Django build
+name: Backend build
 
 on:
   push:
