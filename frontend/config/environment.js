@@ -30,6 +30,7 @@ module.exports = function (environment) {
     // ensure this token has the STYLES:TILES scope
     // ensure the access URL is configured in mapbox properly (e.x: patrickmccartney.dev to only allow requests from this domain)
     MAPBOX_ACCESS_TOKEN: process.env.MAPBOX_ACCESS_TOKEN,
+    SENTRY_DSN: process.env.SENTRY_DSN,
   };
 
   if (environment === 'development') {
