@@ -19,6 +19,7 @@ const purgeCSS = {
 
 module.exports = function (defaults) {
   let app = new EmberApp(defaults, {
+    sourcemaps: { enabled: true },
     postcssOptions: {
       compile: {
         enabled: true,
