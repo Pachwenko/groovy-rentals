@@ -4,7 +4,6 @@ import loadInitializers from 'ember-load-initializers';
 import config from 'spooky-rentals/config/environment';
 import { InitSentryForEmber } from '@sentry/ember';
 
-
 InitSentryForEmber();
 
 export default class App extends Application {
